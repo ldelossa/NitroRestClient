@@ -30,5 +30,5 @@ if normalizedservername is None:
     sys.exit(2)
 
 #Enable server
-Client.enablephysicalserver(servername)
+Client.enablephysicalserver(normalizedservername)
 sys.exit(0)
