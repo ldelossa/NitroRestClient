@@ -14,14 +14,14 @@ args = parser.parse_args()
 try:
     Client = NitroRestClient.NitroRestClient(args.netscalerip, args.username, args.password)
 except:
-    print "Couldn't create Nitro Session, check username and password and network connectivity"
+    print("Couldn't create Nitro Session, check username and password and network connectivity")
     sys.exit(1)
 
 #Check servername for validity
 
 try:
     normalizedservername = Client.servernamecheck(args.servername)
-except ValueError, e:
+except ValueError as e:
     print("Invalid server name was provided. Please check server name and try again.")
     sys.exit(2)
 
@@ -44,6 +44,6 @@ while True:
            ServerStat['cursrvrconnections'] == '0' and
            ServerStat['svrestablishedconn'] == '0'
            for ServerStat in ServerStats):
-        print normalizedservername + " No longer has connections"
+        print(normalizedservername + " No longer has connections")
         break
 sys.exit(0)

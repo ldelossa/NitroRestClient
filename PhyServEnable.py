@@ -13,7 +13,7 @@ args = parser.parse_args()
 try:
     Client = NitroRestClient.NitroRestClient(args.netscalerip, args.username, args.password)
 except:
-    print "Couldn't create Nitro Session, check username and password and network connectivity"
+    print("Couldn't create Nitro Session, check username and password and network connectivity")
     sys.exit(1)
 
 #Check servername for validity
